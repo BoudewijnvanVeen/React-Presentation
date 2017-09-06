@@ -1,0 +1,38 @@
+{
+    "slides": [
+        {
+            "id": 100,
+            "title": "Slide 1.0",
+            "body": "Hello...",
+            "children": [
+                {
+                    "id": 101,
+                    "title": "Slide 1.1",
+                    "body": "Hello..."
+                },
+                {
+                    "id": 102,
+                    "title": "Slide 1.2",
+                    "body": "Hello..."
+                }
+            ]
+        },
+        {
+            "id": 200,
+            "title": "Slide 2.0",
+            "body": "Hello...",
+            "children": [
+                {
+                    "id": 201,
+                    "title": "Slide 2.1",
+                    "body": "Hello..."
+                },
+                {
+                    "id": 202,
+                    "title": "Slide 2.2",
+                    "body": "Hello..."
+                }
+            ]
+        }
+    ]
+}
