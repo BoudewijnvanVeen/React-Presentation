@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
-import data from './data.json';
 import Slides from './slides';
+import 'whatwg-fetch'
 import './App.css';
 
 class App extends Component {
@@ -9,19 +9,19 @@ class App extends Component {
   constructor(props) {
     super(props);  
 
-    this.state = { slides: [] };    
+    this.state = { slides: [{"title":"Loading..."}] };    
   }  
-
-  componentDidMount() {
-    this.loadData();        
-  } 
 
   loadData() {   
     fetch('https://raw.githubusercontent.com/BoudewijnvanVeen/React-Presentation/master/slides/index.json')
     .then(response => response.json())
     .then(json => { this.setState({ slides: json })})
     .catch(ex => { console.log('parsing failed', ex) });
-  }  
+  } 
+
+  componentDidMount() {
+    this.loadData();        
+  }    
 
   render() {
     return (
