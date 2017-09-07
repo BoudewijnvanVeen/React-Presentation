@@ -14,7 +14,7 @@ export default class Slide extends Component {
     }
 
     loadData() {   
-        fetch('https://raw.githubusercontent.com/BoudewijnvanVeen/ToWeb-DashBoard/master/README.md')
+        fetch(this.props.slide.source)
         .then(response => response.text())
         .then(text => { this.setState({ body: text })})
         .catch(ex => { console.log('parsing failed', ex) });

@@ -8,13 +8,14 @@ export default class Slides extends Component {
     this.gotoNextSlide = this.gotoNextSlide.bind(this);
 
     this.state = { currentslide: this.props.slides[0] };
-    localStorage.setItem('currentslide', this.props.slides[0].id);
-  }
+    localStorage.setItem('currentslide', this.props.slides[0]);
+  }  
 
   gotoNextSlide(currentslide) {
-    var nextslide = this.props.slides[this.props.slides.indexOf(currentslide) + 1];
-    localStorage.setItem('currentslide', nextslide.id);
+    var nextslide = this.state.slides[this.props.slides.indexOf(currentslide) + 1];
+        
     this.setState({ currentslide: nextslide });
+    localStorage.setItem('currentslide', JSON.stringify(nextslide));
   }
 
   render() {
