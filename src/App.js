@@ -13,7 +13,7 @@ class App extends Component {
           <h2>Welcome to React</h2>
         </div>
         <div className="App-intro">
-          <Slides slides={data.slides} />
+          <Slides source="https://raw.githubusercontent.com/BoudewijnvanVeen/React-Presentation/master/slides/" />
         </div>
       </div>
     );
