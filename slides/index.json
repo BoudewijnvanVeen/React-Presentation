@@ -1,6 +1,6 @@
 {    
     "slides": [
-        {
+        {            
             "title": "Slide 1.0",
             "source": "https://raw.githubusercontent.com/BoudewijnvanVeen/React-Presentation/master/slides/Slide 1.0.md",
             "children": [
@@ -12,7 +12,7 @@
                 }
             ]
         },
-        {
+        {            
             "title": "Slide 2.0",
             "source": "https://raw.githubusercontent.com/BoudewijnvanVeen/React-Presentation/master/slides/Slide 2.0.md",
             "children": [

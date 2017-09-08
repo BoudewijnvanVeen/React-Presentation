@@ -6,33 +6,23 @@ import 'whatwg-fetch'
 export default class Slide extends Component {
 
     constructor(props) {
-        super(props);
-        
-        this.state = {
-            body: '# Loading\n\n...'
-        };
+        super(props);        
+        this.state = { body: '## Loading...'  };
     }
 
-    loadData() {   
-        fetch(this.props.slide.source)
-        .then(response => response.text())
-        .then(text => { this.setState({ body: text })})
-        .catch(ex => { console.log('parsing failed', ex) });
-    }
-
-    componentDidMount() {
-        this.loadData();        
+    componentWillReceiveProps(nextProps) {   
+        if(this.props !== nextProps && nextProps.slide.source) {
+            fetch(nextProps.slide.source)
+            .then(response => response.text())            
+            .then(text => { this.setState({ body: text })})
+            .catch(ex => { console.log('parsing failed', ex) });
+        }
     }    
 
     render() {
         return (
             <div>
-                <div>
-                    {this.props.slide.title}
-                </div>
-                <div>
-                    <ReactMarkdown source={this.state.body} />
-                </div>
+                <ReactMarkdown source={this.state.body} />                
             </div>
         );
     }
