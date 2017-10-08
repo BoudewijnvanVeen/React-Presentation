@@ -13,7 +13,7 @@ class App extends Component {
   }  
 
   loadData() {   
-    fetch('https://raw.githubusercontent.com/BoudewijnvanVeen/React-Presentation/master/slides/index.json')
+    fetch('slides/index.json')
     .then(response => response.json())
     .then(json => { this.setState({ slides: json })})
     .catch(ex => { console.log('parsing failed', ex) });
