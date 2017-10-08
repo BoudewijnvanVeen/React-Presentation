@@ -1,0 +1,9 @@
+{    
+    "slides": [
+        {            
+            "url": "slides/slide1.json"            
+        },{            
+            "url": "slides/slide2.json"            
+        }
+    ]
+}

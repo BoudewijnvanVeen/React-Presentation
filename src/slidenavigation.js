@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import 'whatwg-fetch'
 
 export default class SlideNavigation extends Component {
   constructor(props) {
@@ -8,7 +9,7 @@ export default class SlideNavigation extends Component {
 
   handleClick(e) {  
     this.props.gotoNextSlide(this.props.currentslide);    
-  }
+  } 
 
   render() { 
     return (      
