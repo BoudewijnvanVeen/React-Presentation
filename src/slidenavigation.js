@@ -3,17 +3,27 @@ import React, {Component} from 'react';
 export default class SlideNavigation extends Component {
   constructor(props) {
     super(props);       
-    this.handleClick = this.handleClick.bind(this);        
-  }
+    
+    this.setCurrentSlide = this.setCurrentSlide.bind(this);          
+  }    
 
-  handleClick(e) {  
-    this.props.gotoNextSlide(this.props.currentslide);    
+  setCurrentSlide(slide) {
+    this.props.setCurrentSlide(slide);
   } 
 
   render() { 
-    return (      
-      <div onClick={this.handleClick}>        
-        Next        
+    const currentIndex = (this.props.currentSlide !== undefined)?this.props.slides.findIndex(s => s.url === this.props.currentSlide.url):0;    
+    const nextSlide = this.props.slides[currentIndex + 1];
+    const prevSlide = this.props.slides[currentIndex - 1]
+
+    return (    
+      <div>
+        <button onClick={() => this.setCurrentSlide(prevSlide)} disabled={prevSlide === undefined}>        
+          Prev        
+        </button> 
+        <button onClick={() => this.setCurrentSlide(nextSlide)} disabled={nextSlide === undefined}>        
+          Next        
+        </button>
       </div>
     );
   }

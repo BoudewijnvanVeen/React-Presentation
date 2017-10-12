@@ -5,23 +5,28 @@ import SlideContainer from './slidecontainer';
 export default class Slides extends Component {
   constructor(props) {
     super(props);
-    this.gotoNextSlide = this.gotoNextSlide.bind(this);
-
-    this.state = { currentslide: { "url" : "slides/slide1.json" }};    
+    this.setCurrentSlide = this.setCurrentSlide.bind(this);
+    
+    this.state = { currentSlide: { "url" : "slides/slide1.json" }};    
   }    
 
-  gotoNextSlide(currentslide) {
-    var nextSlide = this.props.slides[this.props.slides.slides.indexOf(this.state.currentslide) + 1];        
-    this.setState({ currentslide: nextSlide });    
-  } 
+  componentWillReceiveProps(nextProps) {
+    if (nextProps !== this.props) {
+      this.setState({ currentSlide: nextProps.slides[0] })      
+    }    
+  }
+
+  setCurrentSlide(Slide) {
+    this.setState({ currentSlide: Slide });       
+  }   
 
   render() {
     return (
       <div>
         <div>
-          <SlideNavigation currentslide={this.state.currentslide} gotoNextSlide={this.gotoNextSlide} />
+          <SlideNavigation currentSlide={this.state.currentSlide} slides={this.props.slides} setCurrentSlide={this.setCurrentSlide} />
         </div><div>
-          <SlideContainer slide={this.state.currentslide} />
+          <SlideContainer slide={this.state.currentSlide} />
         </div>
       </div>
     );
