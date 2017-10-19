@@ -14,7 +14,7 @@ export default class SlideContainer extends Component {
       fetch(nextProps.slide.url)
       .then(response => response.json())            
       .then(json => { this.setState({ slide: json })})
-      .catch(ex => { console.log('parsing failed', ex) });  
+      .catch(ex => { console.log('parsing failed', nextProps.slide.url, ex) });  
     }    
   }
 

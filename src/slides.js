@@ -17,26 +17,29 @@ export default class Slides extends Component {
   }
 
   setCurrentSlide(pointer) {  
-    var nextSlideIndex = this.state.currentSlideIndex
+    var nextSlideIndex = Object.assign({}, this.state.currentSlideIndex);
     switch (pointer) {
       case 'prev': 
-        nextSlideIndex = [1,0]
+        nextSlideIndex[0] = nextSlideIndex[0] - 1
         break;  
       case 'next': 
-        nextSlideIndex = [1,0]
+        nextSlideIndex[0] = nextSlideIndex[0] + 1
         break;   
       case 'up': 
-        nextSlideIndex = [0,1]
+        nextSlideIndex[1] = nextSlideIndex[1] - 1
         break; 
       case 'down': 
-        nextSlideIndex = [0,1]
+        nextSlideIndex[1] = nextSlideIndex[1] + 1
         break; 
     }
 
-    var currentSlide = this.props.slides[nextSlideIndex[0]][nextSlideIndex[1]];
+    var nextSlide = this.props.slides[nextSlideIndex[0]];
 
-    if (currentSlide !== undefined)
-      this.setState({ currentSlideIndex: nextSlideIndex, currentSlide: currentSlide })  
+    if (nextSlide !== undefined)
+      nextSlide = nextSlide[nextSlideIndex[1]]; 
+
+    if (nextSlide !== undefined)
+      this.setState({ currentSlideIndex: nextSlideIndex, currentSlide: nextSlide })  
   }   
 
   render() {
