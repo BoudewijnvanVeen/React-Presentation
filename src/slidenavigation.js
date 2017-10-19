@@ -7,23 +7,17 @@ export default class SlideNavigation extends Component {
     this.setCurrentSlide = this.setCurrentSlide.bind(this);          
   }    
 
-  setCurrentSlide(slide) {
-    this.props.setCurrentSlide(slide);
+  setCurrentSlide(pointer) {
+    this.props.setCurrentSlide(pointer);
   } 
 
-  render() { 
-    const currentIndex = (this.props.currentSlide !== undefined)?this.props.slides.findIndex(s => s.url === this.props.currentSlide.url):0;    
-    const nextSlide = this.props.slides[currentIndex + 1];
-    const prevSlide = this.props.slides[currentIndex - 1]
-
+  render() {    
     return (    
       <div>
-        <button onClick={() => this.setCurrentSlide(prevSlide)} disabled={prevSlide === undefined}>        
-          Prev        
-        </button> 
-        <button onClick={() => this.setCurrentSlide(nextSlide)} disabled={nextSlide === undefined}>        
-          Next        
-        </button>
+        <button onClick={() => this.setCurrentSlide('prev')}>Prev</button> 
+        <button onClick={() => this.setCurrentSlide('next')}>Next</button>
+        <button onClick={() => this.setCurrentSlide('up')}>Up</button> 
+        <button onClick={() => this.setCurrentSlide('down')}>Down</button>
       </div>
     );
   }

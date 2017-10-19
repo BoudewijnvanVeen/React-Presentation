@@ -1,9 +1,11 @@
 {    
-    "slides": [
-        {            
-            "url": "slides/slide1.json"            
-        },{            
-            "url": "slides/slide2.json"            
-        }
-    ]
+    "slides": [ [ 
+                { "url":"slides/slide1.json"},          
+                { "url": "slides/slide11.json" },
+                { "url": "slides/slide12.json" }
+            ],[ 
+                { "url":"slides/slide2.json"},          
+                { "url": "slides/slide21.json" },
+                { "url": "slides/slide22.json" }
+            ]]
 }

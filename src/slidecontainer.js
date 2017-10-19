@@ -6,7 +6,7 @@ export default class SlideContainer extends Component {
   constructor(props) {
     super(props); 
 
-    this.state = { slide: { "url" : "slides/Slide1.json"}};
+    this.state = { slide: {} };
   }  
 
   componentWillReceiveProps(nextProps) {

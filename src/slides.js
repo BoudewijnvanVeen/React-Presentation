@@ -7,24 +7,43 @@ export default class Slides extends Component {
     super(props);
     this.setCurrentSlide = this.setCurrentSlide.bind(this);
     
-    this.state = { currentSlide: { "url" : "slides/slide1.json" }};    
-  }    
+    this.state = { currentSlideIndex: [0,0], currentSlide: {} };    
+  }     
 
   componentWillReceiveProps(nextProps) {
     if (nextProps !== this.props) {
-      this.setState({ currentSlide: nextProps.slides[0] })      
-    }    
+      this.setState({ currentSlide: nextProps.slides[this.state.currentSlideIndex[0]][this.state.currentSlideIndex[1]] })      
+    } 
   }
 
-  setCurrentSlide(Slide) {
-    this.setState({ currentSlide: Slide });       
+  setCurrentSlide(pointer) {  
+    var nextSlideIndex = this.state.currentSlideIndex
+    switch (pointer) {
+      case 'prev': 
+        nextSlideIndex = [1,0]
+        break;  
+      case 'next': 
+        nextSlideIndex = [1,0]
+        break;   
+      case 'up': 
+        nextSlideIndex = [0,1]
+        break; 
+      case 'down': 
+        nextSlideIndex = [0,1]
+        break; 
+    }
+
+    var currentSlide = this.props.slides[nextSlideIndex[0]][nextSlideIndex[1]];
+
+    if (currentSlide !== undefined)
+      this.setState({ currentSlideIndex: nextSlideIndex, currentSlide: currentSlide })  
   }   
 
   render() {
     return (
       <div>
         <div>
-          <SlideNavigation currentSlide={this.state.currentSlide} slides={this.props.slides} setCurrentSlide={this.setCurrentSlide} />
+          <SlideNavigation setCurrentSlide={this.setCurrentSlide} />
         </div><div>
           <SlideContainer slide={this.state.currentSlide} />
         </div>

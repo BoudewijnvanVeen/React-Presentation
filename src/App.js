@@ -9,12 +9,12 @@ class App extends Component {
   constructor(props) {
     super(props);  
 
-    this.state = { slides: [{ "url" : "slides/slide1.json" }]};      
+    this.state = { slides: []};      
   }  
 
   componentDidMount() {
     fetch('slides/index.json', {cache: "force-cache"})
-    .then(response => response.json())   
+    .then(response => response.json())     
     .then(json => { this.setState({ slides: json.slides })})
     .catch(ex => { console.log('parsing failed', ex) }); 
   }    
