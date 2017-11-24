@@ -20,16 +20,16 @@ export default class Slides extends Component {
     var nextSlideIndex = Object.assign({}, this.state.currentSlideIndex);
     switch (pointer) {
       case 'prev': 
-        nextSlideIndex[0] = nextSlideIndex[0] - 1
+        nextSlideIndex[0]--
         break;  
       case 'next': 
-        nextSlideIndex[0] = nextSlideIndex[0] + 1
+        nextSlideIndex[0]++
         break;   
       case 'up': 
-        nextSlideIndex[1] = nextSlideIndex[1] - 1
+        nextSlideIndex[1]--
         break; 
       case 'down': 
-        nextSlideIndex[1] = nextSlideIndex[1] + 1
+        nextSlideIndex[1]++
         break; 
     }
 
@@ -48,7 +48,7 @@ export default class Slides extends Component {
         <div>
           <SlideNavigation setCurrentSlide={this.setCurrentSlide} />
         </div><div>
-          <SlideContainer slide={this.state.currentSlide} />
+          <SlideContainer {...this.state.currentSlide} />
         </div>
       </div>
     );

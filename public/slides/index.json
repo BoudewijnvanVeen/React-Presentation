@@ -1,11 +1,11 @@
 {    
     "slides": [ [ 
-                { "url":"slides/slide1.json"},          
-                { "url": "slides/slide11.json" },
-                { "url": "slides/slide12.json" }
+                { "id":"1.0", "url":"slides/slide1.json"},          
+                { "id":"1.1", "url": "slides/slide11.json" },
+                { "id":"1.2", "url": "slides/slide12.json" }
             ],[ 
-                { "url":"slides/slide2.json"},          
-                { "url": "slides/slide21.json" },
-                { "url": "slides/slide22.json" }
+                { "id":"2.0", "url":"slides/slide2.json"},          
+                { "id":"2.1", "url": "slides/slide21.json" },
+                { "id":"2.2", "url": "slides/slide22.json" }
             ]]
 }
