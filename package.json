@@ -2,11 +2,10 @@
   "name": "react-presentation",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {
-    "nuka-carousel": "^3.0.0",
+  "dependencies": {   
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
-    "react-markdown": "^2.5.0",
+    "react-markdown": "^2.5.0",   
     "whatwg-fetch": "^2.0.3"
   },
   "devDependencies": {

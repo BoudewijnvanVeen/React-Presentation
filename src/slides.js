@@ -6,6 +6,7 @@ export default class Slides extends Component {
   constructor(props) {
     super(props);
     this.setCurrentSlide = this.setCurrentSlide.bind(this);
+    this.keyPressed = this.keyPressed.bind(this);
     
     this.state = { currentSlideIndex: [0,0], currentSlide: {} };    
   }     
@@ -14,6 +15,10 @@ export default class Slides extends Component {
     if (nextProps !== this.props) {
       this.setState({ currentSlide: nextProps.slides[this.state.currentSlideIndex[0]][this.state.currentSlideIndex[1]] })      
     } 
+  }
+
+  keyPressed(e) {    
+    console.log(e);       
   }
 
   setCurrentSlide(pointer) {  
@@ -44,11 +49,11 @@ export default class Slides extends Component {
 
   render() {
     return (
-      <div>
+      <div onKeyPress={this.keyPressed}>
         <div>
-          <SlideNavigation setCurrentSlide={this.setCurrentSlide} />
-        </div><div>
           <SlideContainer {...this.state.currentSlide} />
+        </div><div>
+          <SlideNavigation setCurrentSlide={this.setCurrentSlide} />
         </div>
       </div>
     );
