@@ -2,10 +2,11 @@
   "name": "react-presentation",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {   
+  "dependencies": {
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
-    "react-markdown": "^2.5.0",   
+    "react-keymaster": "^0.3.0",
+    "react-markdown": "^2.5.0",
     "whatwg-fetch": "^2.0.3"
   },
   "devDependencies": {
