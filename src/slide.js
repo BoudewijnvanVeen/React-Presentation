@@ -3,11 +3,7 @@ import React, { Component } from 'react';
 import ReactMarkdown from 'react-markdown';
 import Carrousel from './carrousel';
 
-export default class Slide extends Component {
-    constructor(props) {
-        super(props)       
-    }   
-
+export default class Slide extends Component {   
     render() {        
         return (
             <div>
@@ -20,7 +16,7 @@ export default class Slide extends Component {
                         })}
                     </Carrousel>      
                 </div>
-                <div>{this.props.slide.sources.map((source) => {{ source.title }})}</div>
+                <div>{this.props.slide.sources.map((source) => { return (source.title) })}</div>
                 <div>{this.props.id}</div>
             </div>
         );

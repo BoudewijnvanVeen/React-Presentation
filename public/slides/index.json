@@ -1,11 +1,23 @@
 {    
     "slides": [ [ 
-                { "id":"1.0", "url":"slides/slide1.json"},          
-                { "id":"1.1", "url": "slides/slide11.json" },
-                { "id":"1.2", "url": "slides/slide12.json" }
+                { "id":"1.0", "title":"Current State of javascript", "url":"slides/slide1.json"},          
+                { "id":"1.1", "title":"", "url": "slides/slide11.json" },
+                { "id":"1.2", "title":"", "url": "slides/slide12.json" }
             ],[ 
-                { "id":"2.0", "url":"slides/slide2.json"},          
-                { "id":"2.1", "url": "slides/slide21.json" },
-                { "id":"2.2", "url": "slides/slide22.json" }
+                { "id":"2.0", "title":"Javascript Landscape", "url":"slides/slide2.json"},          
+                { "id":"2.1", "title":"", "url": "slides/slide21.json" },
+                { "id":"2.2", "title":"", "url": "slides/slide22.json" }
+            ],[ 
+                { "id":"3.0", "title":"Why React", "url":"slides/slide2.json"},          
+                { "id":"3.1", "title":"", "url": "slides/slide21.json" },
+                { "id":"3.2", "title":"", "url": "slides/slide22.json" }
+            ],[ 
+                { "id":"4.0", "title":"React Usage", "url":"slides/slide2.json"},          
+                { "id":"4.1", "title":"", "url": "slides/slide21.json" },
+                { "id":"4.2", "title":"", "url": "slides/slide22.json" }
+            ],[ 
+                { "id":"5.0", "title":"React Hello World", "url":"slides/slide2.json"},          
+                { "id":"5.1", "title":"", "url": "slides/slide21.json" },
+                { "id":"5.2", "title":"", "url": "slides/slide22.json" }
             ]]
 }

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReactKeymaster from 'react-keymaster';
+import Menu from './menu'
 
 export default class SlideNavigation extends Component {
   constructor(props) {
@@ -13,8 +14,11 @@ export default class SlideNavigation extends Component {
   }  
 
   render() { 
+    var menuitems = [].concat.apply([], this.props.slides);
+
     return (
       <div>     
+          <Menu items={menuitems} />   
           <ReactKeymaster keyName="up" onKeyDown={() => {this.setCurrentSlide('up')}} /> 
           <ReactKeymaster keyName="down" onKeyDown={() => {this.setCurrentSlide('down')}}  />   
           <ReactKeymaster keyName="left" onKeyDown={() => {this.setCurrentSlide('prev')}} /> 

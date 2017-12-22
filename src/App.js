@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import Slides from './slides';
 import 'whatwg-fetch'
 import './App.css';
@@ -7,26 +6,26 @@ import './App.css';
 class App extends Component {
 
   constructor(props) {
-    super(props);  
+    super(props);
 
-    this.state = { slides: []};      
-  }  
+    this.state = { slides: [] };
+  }
 
   componentDidMount() {
-    fetch('slides/index.json', {cache: "force-cache"})
-    .then(response => response.json())     
-    .then(json => { this.setState({ slides: json.slides })})
-    .catch(ex => { console.log('parsing failed', ex) }); 
-  }    
+    fetch('slides/index.json', { cache: "force-cache" })
+      .then(response => response.json())
+      .then(json => { this.setState({ slides: json.slides }) })
+      .catch(ex => { console.log('parsing failed', ex) });
+  }
 
-  render() {
+  render() {  
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <div className="App-intro">
+      <div id="app">
+        <div id="header" className="tile">
+          <img src='./images/logo_ecare.png' className="logo" alt="logo" />
+          <h1 className="title">React ... ?</h1>
+        </div>       
+        <div id="content" className="tile">
           <Slides slides={this.state.slides} />
         </div>
       </div>
