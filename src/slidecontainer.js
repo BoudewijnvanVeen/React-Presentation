@@ -10,8 +10,8 @@ export default class SlideContainer extends Component {
   }  
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps !== this.props && nextProps.url !== undefined) {
-      fetch(nextProps.url)
+    if (nextProps !== this.props) {
+      fetch("./slides/" + nextProps.title + ".json")
       .then(response => response.json())            
       .then(json => { this.setState({ slide: json })})
       .catch(ex => { console.log('parsing failed', nextProps.url, ex) });  
@@ -20,7 +20,7 @@ export default class SlideContainer extends Component {
 
   render() {
     if (this.state.slide.title !== undefined)
-      return <Slide id={this.props.id} slide={this.state.slide}  />;
+      return <Slide id={this.props.title} slide={this.state.slide}  />;
 
     return null;
   }

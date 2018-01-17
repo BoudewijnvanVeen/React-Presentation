@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import SlideNavigation from './slidenavigation';
 import SlideContainer from './slidecontainer';
+import Helper from './helper';
 import "./slides.css"
 
 export default class Slides extends Component {
@@ -9,55 +10,39 @@ export default class Slides extends Component {
     this.setCurrentSlide = this.setCurrentSlide.bind(this);    
     this.toggleMenu = this.toggleMenu.bind(this);    
 
-    this.state = { currentSlideIndex: [0, 0], currentSlide: {}, showMenu: false };
+    this.state = { currentSlide: {}, showMenu: false };
   }
 
   componentWillReceiveProps(nextProps) {
     if (nextProps !== this.props) {
-      this.setState({ currentSlide: nextProps.slides[this.state.currentSlideIndex[0]][this.state.currentSlideIndex[1]] })
+      this.setState({ currentSlide: nextProps.slides[0] })
     }
   } 
 
-  setCurrentSlide(pointer) {
-    var nextSlideIndex = Object.assign({}, this.state.currentSlideIndex);
-    switch (pointer) {
-      case 'prev':
-        nextSlideIndex[0]--
-        break;
-      case 'next':
-        nextSlideIndex[0]++
-        break;
-      case 'up':
-        nextSlideIndex[1]--
-        break;
-      case 'down':
-        nextSlideIndex[1]++
-        break;
+  setCurrentSlide(pointer) {    
+    var currentSlide = Helper.findSlide(this.props, this.state.currentSlide);
+    if (currentSlide !== undefined) {      
+      currentSlide = currentSlide[pointer];
+      if (currentSlide !== undefined && currentSlide.title !== undefined) {
+        this.setState({ currentSlide: currentSlide })
+      }
     }
-
-    var nextSlide = this.props.slides[nextSlideIndex[0]];
-
-    if (nextSlide !== undefined)
-      nextSlide = nextSlide[nextSlideIndex[1]];
-
-    if (nextSlide !== undefined)
-      this.setState({ currentSlideIndex: nextSlideIndex, currentSlide: nextSlide })
   }
 
   toggleMenu() {
     this.setState({ showMenu: !this.state.showMenu });
   }
 
-  render() {
+  render() {   
     return (
       <div onKeyPress={this.keyPressed} id="slides" className={(this.state.showMenu ? "showMenu " : "")}>
         <div id="menutoggle" onClick={this.toggleMenu}>=</div>
         <div id="slidenavigation">
-          <SlideNavigation slides={this.props.slides} setCurrentSlide={this.setCurrentSlide} />
+          <SlideNavigation slides={this.props.slides} setCurrentSlide={this.setCurrentSlide} currentSlide={this.state.currentSlide} />
         </div><div id="slidecontainer">
           <SlideContainer {...this.state.currentSlide} />
         </div>
       </div>
-    );
+    );  
   }
 }

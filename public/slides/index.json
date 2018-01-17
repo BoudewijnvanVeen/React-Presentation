@@ -1,23 +1,67 @@
-{    
-    "slides": [ [ 
-                { "id":"1.0", "title":"Current State of javascript", "url":"slides/slide1.json"},          
-                { "id":"1.1", "title":"", "url": "slides/slide11.json" },
-                { "id":"1.2", "title":"", "url": "slides/slide12.json" }
-            ],[ 
-                { "id":"2.0", "title":"Javascript Landscape", "url":"slides/slide2.json"},          
-                { "id":"2.1", "title":"", "url": "slides/slide21.json" },
-                { "id":"2.2", "title":"", "url": "slides/slide22.json" }
-            ],[ 
-                { "id":"3.0", "title":"Why React", "url":"slides/slide2.json"},          
-                { "id":"3.1", "title":"", "url": "slides/slide21.json" },
-                { "id":"3.2", "title":"", "url": "slides/slide22.json" }
-            ],[ 
-                { "id":"4.0", "title":"React Usage", "url":"slides/slide2.json"},          
-                { "id":"4.1", "title":"", "url": "slides/slide21.json" },
-                { "id":"4.2", "title":"", "url": "slides/slide22.json" }
-            ],[ 
-                { "id":"5.0", "title":"React Hello World", "url":"slides/slide2.json"},          
-                { "id":"5.1", "title":"", "url": "slides/slide21.json" },
-                { "id":"5.2", "title":"", "url": "slides/slide22.json" }
-            ]]
+{
+    "slides": [
+        {
+            "title": "1.0 Current State of Javascript",
+            "slides": [
+                {"title": "1.1 Who is using Javascript"},
+                {"title": "1.2 Node Js"}
+            ]
+        },
+        {
+            "title": "Javascript-Landscape",
+            "slides": [
+                {"title": ""},
+                {"title": ""}
+            ]
+        },
+        {
+            "title": "React-Design-Principles",
+            "slides": [
+                {"title": ""},
+                {"title": ""}
+            ]
+        },
+        {
+            "title": "React-Usage",
+            "slides": [
+                {"title": "Facebook"},
+                {"title": ""}
+            ]
+        },
+        {
+            "title": "React-Hello-World",
+            "slides": [
+                {"title": ""},
+                {"title": "React-Developer-Tools"}
+            ]
+        },
+        {
+            "title": "Thinking-In-React",
+            "slides": [
+                {"title": ""},
+                {"title": ""}
+            ]
+        },
+        {
+            "title": "Create-React",
+            "slides": [
+                {"title": ""},
+                {"title": ""}
+            ]
+        },
+        {
+            "title": "React-Native",
+            "slides": [
+                {"title": ""},
+                {"title": ""}
+            ]
+        },
+        {
+            "title": "Redux",
+            "slides": [
+                {"title": ""},
+                {"title": ""}
+            ]
+        }
+    ]
 }

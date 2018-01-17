@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Slides from './slides';
+import Helper from './helper';
 import 'whatwg-fetch'
 import './App.css';
 
@@ -14,9 +15,10 @@ class App extends Component {
   componentDidMount() {
     fetch('slides/index.json', { cache: "force-cache" })
       .then(response => response.json())
-      .then(json => { this.setState({ slides: json.slides }) })
-      .catch(ex => { console.log('parsing failed', ex) });
-  }
+      .then(json => { 
+        Helper.makeTree(json);              
+        this.setState({ slides: json}) 
+  })}
 
   render() {  
     return (
@@ -26,11 +28,9 @@ class App extends Component {
           <h1 className="title">React ... ?</h1>
         </div>       
         <div id="content" className="tile">
-          <Slides slides={this.state.slides} />
+          <Slides {...this.state.slides} />
         </div>
       </div>
-    );
-  }
-}
+  );}}
 
 export default App;
