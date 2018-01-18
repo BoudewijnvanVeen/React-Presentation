@@ -6,57 +6,70 @@
                 {"title": "1.1 Who is using Javascript"},
                 {"title": "1.2 Node Js"}
             ]
-        },
-        {
+        },{
             "title": "Javascript-Landscape",
             "slides": [
                 {"title": ""},
                 {"title": ""}
             ]
-        },
-        {
+        },{
             "title": "React-Design-Principles",
             "slides": [
                 {"title": ""},
                 {"title": ""}
             ]
-        },
-        {
+        },{
             "title": "React-Usage",
             "slides": [
-                {"title": "Facebook"},
+                {"title": "Who Is Using React",
+                    "slides": [
+                        {"title": "AirBnb"},
+                        {"title": "Atlassian"},
+                        {"title": "Blendle"},
+                        {"title": "Disqus"},
+                        {"title": "DropBox"},
+                        {"title": "Expedia"},
+                        {"title": "FaceBook"},
+                        {"title": "IMDB"},
+                        {"title": "Instagram"},
+                        {"title": "NetFlix"},
+                        {"title": "Pinterest"},
+                        {"title": "Skype"},
+                        {"title": "The New york times"},
+                        {"title": "Twitter"},
+                        {"title": "Uber"},
+                        {"title": "Wallmart"},
+                        {"title": "WatsApp"},
+                        {"title": "Wehkamp"},
+                        {"title": "WordPress"}                        
+                    ]},
                 {"title": ""}
             ]
-        },
-        {
+        },{
             "title": "React-Hello-World",
             "slides": [
                 {"title": ""},
                 {"title": "React-Developer-Tools"}
             ]
-        },
-        {
+        },{
             "title": "Thinking-In-React",
             "slides": [
                 {"title": ""},
                 {"title": ""}
             ]
-        },
-        {
+        },{
             "title": "Create-React",
             "slides": [
                 {"title": ""},
                 {"title": ""}
             ]
-        },
-        {
+        },{
             "title": "React-Native",
             "slides": [
                 {"title": ""},
                 {"title": ""}
             ]
-        },
-        {
+        },{
             "title": "Redux",
             "slides": [
                 {"title": ""},

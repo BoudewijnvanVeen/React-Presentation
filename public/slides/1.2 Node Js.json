@@ -1,7 +1,10 @@
 {   
     "title": "This is the second slide",
     "description": "This is the second description",
-    "content": ["# This is a header\n\nAnd this is a paragraph","# This is the second header\n\nAnd this is the second paragraph"],
+    "content": [
+        "# This is a header\n\nAnd this is a paragraph",
+        "# This is the second header\n\nAnd this is the second paragraph"
+    ],
     "sources": [
         {
             "title": "",

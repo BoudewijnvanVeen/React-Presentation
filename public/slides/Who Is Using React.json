@@ -1,0 +1,20 @@
+{
+    "title": "Who is using React?",
+    "description": "Which companies are using react and why?",
+    "content": [
+        "![Atlassian Logo](./images/logos/atlassian.png) * HipChat Created with React,  * BitBucket * Jira plugins in React * Published Some popular React components > If software is eating the world, then JavaScript is eating software, and React is eating JavaScript...",
+        "![AirBnB Logo](./images/logos/airbnb.png) * Website, Mobile * Created Enzyme > Reusability/portability: React components are extremely reusable Refactorability: React tends to make your code very easy to refactor and iterate on."
+    ],
+    "sources": [
+        {
+            "title": "Sites Using React",
+            "url": "https://github.com/facebook/react/wiki/sites-using-react"
+        },{
+            "title": "Who's using React Native?",
+            "url": " http://facebook.github.io/react-native/showcase.html"
+        },{
+            "title": "How Airbnb Uses React",
+            "url": "http://devnacho.com/2016/03/20/how-airbnb-uses-react/"
+        }        
+    ]
+}

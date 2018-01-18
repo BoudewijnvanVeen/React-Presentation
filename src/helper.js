@@ -1,7 +1,6 @@
 
 function findSlide(source, find) {
-    var slide = {};
-    var found = false;
+    var slide = {};   
     var recurse = function (o, i) {
         if (o.slides !== undefined) {
             for (var n = 0; n < o.slides.length; n++) {

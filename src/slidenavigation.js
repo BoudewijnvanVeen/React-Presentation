@@ -16,7 +16,7 @@ export default class SlideNavigation extends Component {
   render() {    
     return (
       <div>     
-          <Menu items={this.props.slides} currentItem={this.props.currentSlide} />   
+          <Menu items={this.props.slides} currentItem={this.props.currentSlide} setCurrentSlide={this.setCurrentSlide} />   
           <ReactKeymaster keyName="up" onKeyDown={() => {this.setCurrentSlide('parent')}} /> 
           <ReactKeymaster keyName="down" onKeyDown={() => {this.setCurrentSlide('firstchild')}}  />   
           <ReactKeymaster keyName="left" onKeyDown={() => {this.setCurrentSlide('prev')}} /> 

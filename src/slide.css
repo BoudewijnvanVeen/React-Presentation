@@ -1,0 +1,29 @@
+
+#slide .title {
+  font-size: 2.0em;
+}
+
+#slide .description {
+  font-size: 1.0em;
+  color: gray;
+}
+
+#slide .id {
+  font-size: 1.0em;
+  color: gray;
+  float: right;
+}
+
+#slide .sources {
+  float: left;
+  bottom: 0; 
+}
+
+#slide .source {
+   
+}
+
+#slide .url {
+  font-size: 0.9em;
+  color: gray;  
+}
