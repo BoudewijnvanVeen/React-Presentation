@@ -15,7 +15,7 @@ export default class Menu extends Component {
                             <span onClick={() => this.props.setCurrentSlide(item)}>{item.title}</span>
                             {currentItem === item ?
                                 <div className="SubMenu">
-                                    {item.slides.map((subitem, subindex) => <span key={subindex} onClick={() => this.props.setCurrentSlide(subitem)}>{subitem.title}</span>)}
+                                    {item.children.map((subitem, subindex) => <span key={subindex} onClick={() => this.props.setCurrentSlide(subitem)}>{subitem.title}</span>)}
                                 </div> : ""}
                         </div>
                     )

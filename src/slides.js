@@ -15,7 +15,7 @@ export default class Slides extends Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps !== this.props) {
-      this.setState({ currentSlide: nextProps.slides[0] })
+      this.setState({ currentSlide: nextProps.children[0] })
     }
   }
 
@@ -44,7 +44,7 @@ export default class Slides extends Component {
       <div onKeyPress={this.keyPressed} id="slides" className={(this.state.showMenu ? "showMenu " : "")}>
         <div id="menutoggle" onClick={this.toggleMenu}>=</div>
         <div id="slidenavigation">
-          <SlideNavigation slides={this.props.slides} setCurrentSlide={this.setCurrentSlide} currentSlide={this.state.currentSlide} />
+          <SlideNavigation slides={this.props.children} setCurrentSlide={this.setCurrentSlide} currentSlide={this.state.currentSlide} />
         </div><div id="slidecontainer">
           <SlideContainer {...this.state.currentSlide} />
         </div>
