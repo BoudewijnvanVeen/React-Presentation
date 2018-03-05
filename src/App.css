@@ -2,7 +2,6 @@
   display: grid;
   grid-gap: 1em;
   grid-template-areas: "header" "content";
-
   padding: 10px;  
 }
 
@@ -20,6 +19,7 @@
 
 #content {
   grid-area: content;
+  padding: 0;  
 }
 
 .logo { 

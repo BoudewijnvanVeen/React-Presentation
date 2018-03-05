@@ -7,6 +7,7 @@ export default class Slide extends Component {
     render() {        
         return (
             <div id="slide">
+            https://stackoverflow.com/questions/90178/make-a-div-fill-the-height-of-the-remaining-screen-space
                 <div className="title">{this.props.slide.title}</div>
                 <div className="description">{this.props.slide.description}</div>
                 <div className="content"><ReactMarkdown source={this.props.slide.content} /></div>  

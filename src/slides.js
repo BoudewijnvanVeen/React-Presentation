@@ -7,16 +7,20 @@ import "./slides.css"
 export default class Slides extends Component {
   constructor(props) {
     super(props);
-    this.setCurrentSlide = this.setCurrentSlide.bind(this);
-    this.toggleMenu = this.toggleMenu.bind(this);
+    this.setCurrentSlide = this.setCurrentSlide.bind(this);  
+    this.toggleMenu = this.toggleMenu.bind(this);   
 
-    this.state = { currentSlide: {}, showMenu: false };
-  }
+    this.state = { currentSlide: {}, showMenu: true };
+  }   
 
   componentWillReceiveProps(nextProps) {
     if (nextProps !== this.props) {
       this.setState({ currentSlide: nextProps.children[0] })
     }
+  }
+
+  toggleMenu() {
+    this.setState({ showMenu: !this.state.showMenu });
   }
 
   setCurrentSlide(pointer) {
@@ -33,19 +37,17 @@ export default class Slides extends Component {
     if (currentSlide !== undefined && currentSlide.title !== undefined) {
       this.setState({ currentSlide: currentSlide })
     }
-  }
-
-  toggleMenu() {
-    this.setState({ showMenu: !this.state.showMenu });
-  }
+  }  
 
   render() {
     return (
-      <div onKeyPress={this.keyPressed} id="slides" className={(this.state.showMenu ? "showMenu " : "")}>
-        <div id="menutoggle" onClick={this.toggleMenu}>=</div>
-        <div id="slidenavigation">
-          <SlideNavigation slides={this.props.children} setCurrentSlide={this.setCurrentSlide} currentSlide={this.state.currentSlide} />
-        </div><div id="slidecontainer">
+      <div onKeyPress={this.keyPressed} id="slides" className={(this.state.showMenu ? "hideMenu " : "showMenu")}>               
+        <div id="sideMenu" className="tile fillArea">              
+          <div id="menuBody">                  
+            <SlideNavigation slides={this.props.children} setCurrentSlide={this.setCurrentSlide} currentSlide={this.state.currentSlide} />
+          </div>
+        </div><div id="innercontent" className="tile flexbox-item-grow">
+          <div id="menuToggle" onClick={this.toggleMenu}>##</div>
           <SlideContainer {...this.state.currentSlide} />
         </div>
       </div>

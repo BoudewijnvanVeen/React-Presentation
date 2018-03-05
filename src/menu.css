@@ -1,16 +1,17 @@
-.Menu>Div {
+
+#Menu>Div {
   font-family: sans-serif;
   font-size: 0.85em; 
   padding: 1px;
 }
 
-.SubMenu>Div {
+#Menu .SubMenu>Div {
   font-family: sans-serif;
   font-size: 0.75em; 
   padding: 1px;
   margin-left: 5px;
 }
 
-.Current {
+#Menu .Current {
   color: #00a514;
 }

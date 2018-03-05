@@ -27,7 +27,7 @@ class App extends Component {
           <img src='./images/logo_ecare.png' className="logo" alt="logo" />
           <h1 className="title">React ... ?</h1>
         </div>       
-        <div id="content" className="tile">
+        <div id="content">
           <Slides {...this.state.slides} />
         </div>
       </div>

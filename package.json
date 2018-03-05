@@ -4,8 +4,10 @@
   "private": true,
   "dependencies": {
     "classnames": "^2.2.5",
+    "eslint-config-defaults": "^9.0.0",
     "prop-types": "^15.6.0",
     "react": "^15.6.1",
+    "react-addons-css-transition-group": "^15.6.2",
     "react-dom": "^15.6.1",
     "react-keymaster": "^0.3.0",
     "react-markdown": "^2.5.0",
